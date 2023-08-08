@@ -31,8 +31,19 @@ public class BD{
         List <Pregunta> preguntas = new List <Pregunta>();
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
+            if((dificultad == -1 && categoria != -1)|| (dificultad==-1 && categoria == -1))
+            {
+            string sql = "SELECT * FROM Preguntas ";
+            preguntas = db.Query<Pregunta>(sql).ToList();
+            }
+            else if (dificultad != -1 && categoria == -1){
+            string sql = "SELECT * FROM Preguntas WHERE IdDificultad = @pdificultad";
+            preguntas = db.QueryFirstOrDefault<Pregunta>(sql, new {pdificultad = dificultad AND pcategoria = categoria});
+            }
+            else{
             string sql = "SELECT * FROM Preguntas WHERE IdDificultad = @pdificultad AND IdCategoria = @pcategoria";
             preguntas = db.QueryFirstOrDefault<Pregunta>(sql, new {pdificultad = dificultad AND pcategoria = categoria});
+            }
         }
         return preguntas;
     }
