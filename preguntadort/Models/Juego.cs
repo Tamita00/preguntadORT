@@ -55,7 +55,10 @@ public static class Juego{
             correcta = true;
             _puntajeActual += 5;
             _cantidadPreguntasCorrectas += 1;
-            _preguntas.Remove(_preguntas.idPregunta);
+            while (_preguntas.Count()>0)
+            {
+            _preguntas.RemoveAt(0);                
+            }
         }
         return correcta;
     }

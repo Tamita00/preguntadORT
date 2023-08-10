@@ -1,0 +1,13 @@
+<p>@ViewBag.username</p>
+<p>@ViewBag.puntajeActual</p>
+<p>@ViewBag.pregunta.enunciado</p>
+<p>@ViewBag.pregunta.foto</p>
+
+<form action='@Url.Action("VerificarRespuesta ")' method="post">
+    
+    @for (int i = -1; i < ViewBag.respuestas.Count; i++){
+    <input type="radio" name="respuesta" value = "@i">
+    <label>@ViewBag.respuestas.contenido</label><br>
+    }
+    <input type="submit" value="Listo">
+</form>
