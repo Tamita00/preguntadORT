@@ -1,10 +1,13 @@
 public class Dificultad{
-    public static string Nombre {get;set;}
-    public static int IdDificultad {get;set;}
-}
+    public string Nombre {get;set;}
+    public int IdDificultad {get;set;}
 
-public Dificultad (int pNombre, int pIdDificultad)
+public Dificultad(){
+
+    }
+public Dificultad (string pNombre, int pIdDificultad)
     {
         Nombre = pNombre;
         IdDificultad = pIdDificultad;
     }
+}

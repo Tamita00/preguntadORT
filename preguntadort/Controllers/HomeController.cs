@@ -18,22 +18,22 @@ public class HomeController : Controller
 
     public IActionResult Comenzar(string username, int dificultad, int categoria){
         Juego.CargarPartida(username, dificultad, categoria);
-        return View("Juego");
+        return View("Jugar");
     }
 
-    public IActionResult Juego(){
+    public IActionResult Jugar(){
         ViewBag.username = Juego._username;
         ViewBag.puntajeActual = Juego._puntajeActual;
         ViewBag.pregunta = Juego.ObtenerProximaPregunta();
-        if(pregunta.length() == 0) return View("Fin");
-        ViewBag.respuestas = Juego.ObtenerProximasRespuestas();
-        return View("Juego");
+        if(Juego.ObtenerProximaPregunta() == null) return View("Fin");
+        ViewBag.respuestas = Juego.ObtenerProximasRespuestas(ViewBag.pregunta.IdPregunta);
+        return View("Jugar");
     }
 
     [HttpPost]
     public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
         ViewBag.correcta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        ViewBag.respuestaCorrecta = Juego.
+        ViewBag.respuestaCorrecta = "";
         return View("Respuesta");
     }
 }

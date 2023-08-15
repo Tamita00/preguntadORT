@@ -1,8 +1,9 @@
+namespace preguntadORT;
 public static class Juego{
 
-    private static string _username;
-    private static int _puntajeActual;
-    private static int _cantidadPreguntasCorrectas;
+    public static string _username;
+    public static int _puntajeActual;
+    public static int _cantidadPreguntasCorrectas;
     private static List<Pregunta> _preguntas;
     private static List<Respuesta> _respuestas;
 
@@ -11,8 +12,6 @@ public static class Juego{
         _username = null;
         _puntajeActual = 0;
         _cantidadPreguntasCorrectas = 0;
-        _preguntas = 0;
-        _respuestas = 0;
     }
 
     public static List<Categoria> ObtenerCategorias()
@@ -32,18 +31,18 @@ public static class Juego{
         _username = username;
     }
 
-    public static string ObtenerProximaPregunta(){
-        int numRandom = funciones.Rndm(0, _preguntas.Count())
+    public static Pregunta ObtenerProximaPregunta(){
+        int numRandom = funciones.Rndm(0, _preguntas.Count);
         return _preguntas[numRandom];
     }
 
     public static List<Respuesta> ObtenerProximasRespuestas(int idPregunta){
 
-        private static List<Respuesta> _respuestasProximas;
+        List<Respuesta> _respuestasProximas = new List <Respuesta>();
         foreach (Respuesta respuesta in _respuestas)
         {
-            if(_respuestas.IdPregunta == idPregunta){
-                _respuestasProximas.Add(_respuestas.contenido)
+            if(respuesta.IdPregunta == idPregunta){
+                _respuestasProximas.Add(respuesta);
             }
         }
         return _respuestasProximas;
@@ -51,7 +50,9 @@ public static class Juego{
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
         bool correcta = false;
-        if(_respuestas.IdRespuesta == idRespuesta){
+        foreach (Respuesta respuesta in _respuestas)
+        {
+        if(respuesta.IdRespuesta == idRespuesta){
             correcta = true;
             _puntajeActual += 5;
             _cantidadPreguntasCorrectas += 1;
@@ -59,6 +60,7 @@ public static class Juego{
             {
             _preguntas.RemoveAt(0);                
             }
+        }
         }
         return correcta;
     }

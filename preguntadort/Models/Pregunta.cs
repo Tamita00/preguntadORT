@@ -1,10 +1,13 @@
 public class Pregunta {
-    public static int IdPregunta {get;set;}
-    public static int IdCategoria {get;set;}
-    public static int IdDificultad {get;set;}
-    public static string enunciado {get;set;}
-    public static string foto {get;set;}
-}
+    public int IdPregunta {get;set;}
+    public int IdCategoria {get;set;}
+    public int IdDificultad {get;set;}
+    public string enunciado {get;set;}
+    public string foto {get;set;}
+
+public Pregunta(){
+
+    }
 
 public Pregunta (int pIdPregunta, int pIdCategoria, int pIdDificultad, string penunciado, string pfoto)
     {
@@ -14,3 +17,4 @@ public Pregunta (int pIdPregunta, int pIdCategoria, int pIdDificultad, string pe
         enunciado = penunciado;
         foto = pfoto;
     }
+}
