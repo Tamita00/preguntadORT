@@ -30,7 +30,8 @@ public class HomeController : Controller
         return View("Juego");
     }
 
-    [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
+    [HttpPost]
+    public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
         ViewBag.correcta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         ViewBag.respuestaCorrecta = Juego.
         return View("Respuesta");
