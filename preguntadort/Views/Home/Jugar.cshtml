@@ -1,14 +1,17 @@
 <div id="ten-countdown"></div>
+
 <p>@ViewBag.username</p>
 <p>@ViewBag.puntajeActual</p>
-<p>@ViewBag.pregunta.enunciado</p>
+<p>@ViewBag.pregunta.Enunciado</p>
 <p>@ViewBag.pregunta.foto</p>
 
-<form action='@Url.Action("VerificarRespuesta ")' method="post">
+<form action='@Url.Action("VerificarRespuesta")' method="post">
     
-    @for (int i = -1; i < ViewBag.respuestas.Count; i++){
-    <input type="radio" name="respuesta" value = "@i">
-    <label>@ViewBag.respuestas.contenido</label><br>
+    @foreach (Respuesta respuesta in ViewBag.respuestas)
+    {        
+    <input type="hidden" name = "idPregunta" value = "@respuesta.IdPregunta">
+    <input type="radio" name="idRespuesta" value = "@respuesta.IdRespuesta">
+    <label>@respuesta.contenido</label><br>
     }
     <input type="submit" value="Listo">
 </form>

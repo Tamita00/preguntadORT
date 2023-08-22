@@ -1,6 +1,7 @@
 namespace preguntadORT;
 public static class Juego{
 
+    private static int i;
     public static string _username;
     public static int _puntajeActual;
     public static int _cantidadPreguntasCorrectas;
@@ -9,6 +10,7 @@ public static class Juego{
 
     
     public static void InicializarJuego(){
+        i = 0;
         _username = null;
         _puntajeActual = 0;
         _cantidadPreguntasCorrectas = 0;
@@ -32,8 +34,8 @@ public static class Juego{
     }
 
     public static Pregunta ObtenerProximaPregunta(){
-        int numRandom = funciones.Rndm(0, _preguntas.Count);
-        return _preguntas[numRandom];
+        i++;
+        return _preguntas[i];
     }
 
     public static List<Respuesta> ObtenerProximasRespuestas(int idPregunta){
@@ -52,14 +54,11 @@ public static class Juego{
         bool correcta = false;
         foreach (Respuesta respuesta in _respuestas)
         {
-        if(respuesta.IdRespuesta == idRespuesta){
+        if((respuesta.IdRespuesta == idRespuesta)||(respuesta.correcta == true)){
             correcta = true;
             _puntajeActual += 5;
-            _cantidadPreguntasCorrectas += 1;
-            while (_preguntas.Count()>0)
-            {
-            _preguntas.RemoveAt(0);                
-            }
+            _cantidadPreguntasCorrectas ++;
+            _preguntas.RemoveAt(0);          
         }
         }
         return correcta;

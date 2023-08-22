@@ -5,14 +5,16 @@
   <input type="text" name="username"><br>
     
     <p>Categoría</p>
-    @for (int i = -1; i < ViewBag.categorias.Count; i++){
-    <input type="radio" name="categoria" value = "@i">
-    <label>@ViewBag.categorias.Nombre</label><br>
+    @foreach (Categoria categoria in ViewBag.categorias)
+    {
+    <input type="radio" name="categoria" value = "@categoria.IdCategoria">
+    <label>@categoria.Nombre</label><br>
     }
     <p>Dificultad</p>
-    @for (int i = -1; i < ViewBag.dificultades.Count; i++){
-    <input type="radio" name="dificultad" value = "@i">
-    <label>@ViewBag.dificultades.Nombre</label><br>
+    @foreach (Dificultad dificultad in ViewBag.dificultades)
+    {
+    <input type="radio" name="dificultad" value = "@dificultad.IdDificultad">
+    <label>@dificultad.Nombre</label><br>
     }
     <input type="submit" value="Jugar">
 </form>
