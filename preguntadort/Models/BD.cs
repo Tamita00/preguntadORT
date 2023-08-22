@@ -3,7 +3,7 @@ using Dapper;
 namespace preguntadORT;
 
 public class BD{
-    private static string ConnectionString = @"Server=localhost;DataBase=preguntadORT;Trusted_Connection=True;";
+    private static string ConnectionString = @"Server=localhost;DataBase=PreguntadOrt;Trusted_Connection=True;";
 
     public static List<Categoria> ObtenerCategorias(){
         List <Categoria> categorias = new List <Categoria>();
@@ -19,7 +19,7 @@ public class BD{
         List <Dificultad> dificultades = new List <Dificultad>();
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
-            string sql = "SELECT * FROM Dificultades";
+            string sql = "SELECT * FROM Dificultad";
             dificultades = db.Query<Dificultad>(sql).ToList();
         }
         return dificultades;
