@@ -34,8 +34,13 @@ public static class Juego{
     }
 
     public static Pregunta ObtenerProximaPregunta(){
-        i++;
-        return _preguntas[i];
+        if(_preguntas.Count>0){
+            return _preguntas[0];
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public static List<Respuesta> ObtenerProximasRespuestas(int idPregunta){
@@ -52,13 +57,22 @@ public static class Juego{
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
         bool correcta = false;
+        int eliminar = 0;
+        for (int i = 0; i < _preguntas.Count; i++)
+        {
+            if(_preguntas[i].IdPregunta==idPregunta)
+            {
+                eliminar = i;
+            }
+        }
+        _preguntas.RemoveAt(eliminar);
+
         foreach (Respuesta respuesta in _respuestas)
         {
-        if((respuesta.IdRespuesta == idRespuesta)||(respuesta.correcta == true)){
+            if((respuesta.IdRespuesta == idRespuesta)&&(respuesta.correcta == true)){
             correcta = true;
             _puntajeActual += 5;
-            _cantidadPreguntasCorrectas ++;
-            _preguntas.RemoveAt(0);          
+            _cantidadPreguntasCorrectas ++;  
         }
         }
         return correcta;
