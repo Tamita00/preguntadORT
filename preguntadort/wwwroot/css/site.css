@@ -11,11 +11,242 @@ html {
 }
 
 body {
-  margin: 20px 60px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-footer {
-  position: fixed; 
-  bottom: 0; 
-  margin: 10px 0px 20px 0px;
+.background {
+  background-image: url('img/foto2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/*INDEX*/
+
+.contenedor {
+  margin-top: 2em;
+  background: rgb(255, 255, 255);
+  border: 0.5em solid rgb(103, 39, 141);
+  border-radius: 5em;
+  width: 70em;
+  height: 55em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor h1 {
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Fredoka One", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Espaciado entre letras */
+  margin-bottom: 20px;
+  /* Margen inferior para separación */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra de texto */
+  padding-bottom: 30px;
+}
+
+.contenedor img {
+  justify-content: center;
+  margin-top: 5em;
+  max-width: 30em;
+  max-height: 40em;
+}
+
+.contenedor a:link{
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor a:visited {
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor a:hover,
+a:active {
+  background-color: rgb(173, 85, 255);
+  border: none;
+}
+
+
+/*CONFIGURAR JUEGO*/
+
+.contenedor_configurarJuego {
+  margin-top: 2em;
+  background: rgb(255, 255, 255);
+  border: 0.5em solid rgb(103, 39, 141);
+  border-radius: 5em;
+  width: 70em;
+  height: 55em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor_configurarJuego h1 {
+  margin-top: 1.3em;
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Fredoka One", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding-bottom: 30px;
+  align-items: center;
+}
+
+.contenedor_configurarJuego h2 {
+  color: black;
+  font-family: "Fredoka One", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 1em;
+}
+
+.contenedor_configurarJuego .opciones {
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+
+.btn-outline-secondary{
+  margin-right: 1em;
+}
+
+.contenedor_configurarJuego a:link{
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor_configurarJuego a:visited {
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor_configurarJuego a:hover,
+a:active {
+  background-color: rgb(173, 85, 255);
+  border: none;
+}
+
+
+/*JUEGO*/
+
+.contenedor-juego {
+  margin-top: 2em;
+  background: rgb(255, 255, 255);
+  border: 0.5em solid rgb(103, 39, 141);
+  border-radius: 5em;
+  width: 70em;
+  height: 57em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor-juego h1 {
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Fredoka One", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Espaciado entre letras */
+  margin-bottom: 20px;
+  /* Margen inferior para separación */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra de texto */
+  padding-bottom: 30px;
+}
+
+.contenedor-juego img {
+  justify-content: center;
+  margin-top: 5em;
+  max-width: 30em;
+  max-height: 25em;
+}
+
+.contenedor-juego a:link{
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor-juego a:visited {
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor-juego a:hover,
+a:active {
+  background-color: rgb(173, 85, 255);
+  border: none;
+}
+
+/*FIN*/
+
+.contenedor-fin {
+  margin-top: 2em;
+  background: rgb(255, 255, 255);
+  border: 0.5em solid rgb(103, 39, 141);
+  border-radius: 5em;
+  width: 70em;
+  height: 55em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor-fin h1 {
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Fredoka One", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Espaciado entre letras */
+  margin-bottom: 20px;
+  /* Margen inferior para separación */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra de texto */
+  padding-bottom: 30px;
+}
+
+.contenedor-fin img {
+  justify-content: center;
+  margin-top: 5em;
+  max-width: 50em;
+  max-height: 60em;
+}
+.contenedor-fin a:link{
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor-fin a:visited {
+  background-color: rgb(137, 43, 226);
+  border: none;
+}
+
+.contenedor-fin a:hover,
+a:active {
+  background-color: rgb(173, 85, 255);
+  border: none;
 }
