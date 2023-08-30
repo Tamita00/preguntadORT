@@ -25,7 +25,6 @@ public class HomeController : Controller
         ViewBag.username = Juego._username;
         ViewBag.puntajeActual = Juego._puntajeActual;
         ViewBag.pregunta = Juego.ObtenerProximaPregunta();
-        //falta poner las peguntas
         if(Juego.ObtenerProximaPregunta() == null) return View("Fin");
         ViewBag.respuestas = Juego.ObtenerProximasRespuestas(ViewBag.pregunta.IdPregunta);
         return View("Jugar");
@@ -35,6 +34,8 @@ public class HomeController : Controller
     public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
         ViewBag.correcta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         ViewBag.respuestaCorrecta = "";
+        ViewBag.username = Juego._username;
+        ViewBag.puntajeActual = Juego._puntajeActual;
         return View("Respuesta");
     }
     

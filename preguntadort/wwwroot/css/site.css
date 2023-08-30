@@ -18,7 +18,7 @@ body {
 }
 
 .background {
-  background-image: url('img/foto2.jpg');
+  background-image: url('\img\foto2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -197,6 +197,14 @@ a:active {
 a:active {
   background-color: rgb(173, 85, 255);
   border: none;
+}
+
+.contenedor-juego .opciones .listo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1em;
 }
 
 /*FIN*/
