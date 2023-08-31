@@ -26,6 +26,6 @@
     updateTimer();
 }
 
-countdown( "ten-countdown", 9 , 59 );
+countdown( "ten-countdown", 0 , 20 );
 
 

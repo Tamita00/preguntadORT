@@ -33,7 +33,7 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
         ViewBag.correcta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        ViewBag.respuestaCorrecta = "";
+        ViewBag.respuestaCorrecta = Juego.ObtenerRespuestaCorrecta(idPregunta);
         ViewBag.username = Juego._username;
         ViewBag.puntajeActual = Juego._puntajeActual;
         return View("Respuesta");

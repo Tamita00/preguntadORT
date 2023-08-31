@@ -64,4 +64,17 @@ public class BD{
     }
     return respuestas;
 }
+
+public static string ObtenerRespuestaCorrecta (int idPregunta )
+{
+    string Correcta;
+    
+            string sql = "SELECT Contenido FROM Respuestas INNER JOIN Preguntas ON Preguntas.IdPregunta = Respuestas.IdPregunta WHERE Respuestas.Correcta = 1 AND Preguntas.IdPregunta = @pIdPregunta";
+        using (SqlConnection db = new SqlConnection(ConnectionString))
+        {
+            Correcta = db.QueryFirstOrDefault<string>(sql, new{@pIdPregunta = idPregunta});
+        }
+        return Correcta;
+}
+
 }

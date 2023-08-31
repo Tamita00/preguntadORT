@@ -15,7 +15,7 @@
     <div class="contenedor-juego"><br><br><br>
     <div id="ten-countdown"></div>
         <h1>@ViewBag.pregunta.Enunciado</h1>
-        <img src="img/@ViewBag.pregunta.foto" alt="arcoiris"><br><br>
+        <img src="\img\preguntasFotos\@ViewBag.pregunta.foto" alt="arcoiris"><br><br>
         <div class="opciones">
 
         <form action='@Url.Action("VerificarRespuesta")' method="post">
@@ -27,7 +27,7 @@
             }
             
         <div class = "listo">
-            <input type="submit" class="btn btn-primary" role="button" style=" width: 10em" value="Listo"><br>
+            <input type="submit" class="btn btn-secondary" role="button" style=" width: 10em" value="Listo"><br>
         </div>
 
         </form>

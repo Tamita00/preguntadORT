@@ -78,4 +78,8 @@ public static class Juego{
         return correcta;
     }
 
+    public static string ObtenerRespuestaCorrecta(int idPregunta){
+        return BD.ObtenerRespuestaCorrecta(idPregunta);
+    }
+
 }

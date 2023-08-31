@@ -28,6 +28,8 @@
                 <input type="radio" class="btn-check" name="dificultad" id="op@(i)" autocomplete="off" value = "@ViewBag.dificultades[i].IdDificultad">
                 <label class="btn btn-outline-secondary" for="op@(i)">@ViewBag.dificultades[i].Nombre</label>
             }
+            <input type="radio" class="btn-check" name="dificultad" id="op-1" autocomplete="off" value = "-1">
+                <label class="btn btn-outline-secondary" for="op-1">Todas</label>
             </div>
 
             <h2>Categoría</h2>
@@ -37,11 +39,13 @@
                 <input type="radio" class="btn-check" name="categoria" id="opt@(i)" autocomplete="off" value = "@ViewBag.categorias[i].IdCategoria">
                 <label class="btn btn-outline-secondary" for="opt@(i)">@ViewBag.categorias[i].Nombre</label>
             }
+            <input type="radio" class="btn-check" name="categoria" id="opt-1" autocomplete="off" value = "-1">
+                <label class="btn btn-outline-secondary" for="opt-1">Todas</label>
             </div>
             <br><br>
-            
-          <input type="submit" class="btn btn-primary" value="Jugar" role="button" style=" width: 250px">
-          
+            <div class = "aparte">
+          <input type="submit" class="btn btn-secondary" value="Jugar" role="button" style=" width: 250px">
+            </div>
         </form>
     </div>
 </body>
